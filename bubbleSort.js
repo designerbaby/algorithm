@@ -1,4 +1,8 @@
-// 冒泡排序
+/**
+ * 冒泡排序
+ * 双层循环，时间复杂度 O^2
+ */
+
 
 function bubbleSort (arr) {
   for (let i = 0; i < arr.length; i += 1) {
