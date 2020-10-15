@@ -6,14 +6,17 @@
  */
 
 // 第一个版本，暴力递归
+let cishu = 0
 function fib(n) {
+  cishu += 1
+  console.log('cishu:', cishu)
   if (n === 1 || n === 2) {
     return 1
   }
   return fib(n - 1) + fib(n - 2)
 }
 
-console.log(fib(4))
+console.log(fib(5))
 
 // 第二个版本，缓存版递归
 function fib1(n) {
