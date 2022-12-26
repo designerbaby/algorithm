@@ -8,18 +8,18 @@
 const arr = [1,2,3,[4,5,[6,7,[8,9]],10,11],12]
 
 // 数组打平的第一种方法：递归
-// Array.prototype.flat = function () {
-//   let arr = []
-//   this.forEach(item => {
-//     if (Array.isArray(item)) {
-//       console.log('item:', item)
-//       arr = arr.concat(item.flat())
-//     } else {
-//       arr.push(item)
-//     }
-//   })
-//   return arr
-// }
+Array.prototype.flat = function () {
+  let arr = []
+  this.forEach(item => {
+    if (Array.isArray(item)) {
+      console.log('item:', item)
+      arr = arr.concat(item.flat())
+    } else {
+      arr.push(item)
+    }
+  })
+  return arr
+}
 
 // console.log(arr.flat())
 

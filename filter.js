@@ -1,3 +1,4 @@
+// filter的数组实现
 Array.prototype.filter = function(func) {
   var arr = this;
   var res = [];

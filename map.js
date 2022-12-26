@@ -1,3 +1,5 @@
+// 数组的map方法
+
 Array.prototype.newMap = function (fn) {
   var res = [];
   console.log(this);

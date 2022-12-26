@@ -7,7 +7,7 @@ function myRepeat(target, n) {
 }
 
 console.log(myRepeat(str, 5));
-
+// 数组的repeat方法
 String.prototype.myRepeat = function (count) {
   if (this === null) {
     throw new TypeError(`can't convert ${this} to object`);

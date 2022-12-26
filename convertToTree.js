@@ -1,3 +1,4 @@
+// 数组转树
 function convertToTree(data) {
   const map = data.reduce((acc, item) => {
     acc[item.id] = item
