@@ -1,32 +1,32 @@
-// 继承
-
-// 原型链继承
-function Animal() {
-  this.colors = ["black", "white"]
+// extends原理
+// 体现使用es6的extends实现继承
+// 继承的最大问题在于：无法决定继承哪些属性，所有属性都得继承。
+// 如何解决：使用组合的形式
+function _possibleConstructorReturn(self, call) {
+  return call && (typeof call === 'object' || typeof call === 'function') ? call : self
 }
 
-Animal.prototype.getColor = function() {
-  return this.colors;
+function _inherits(subClass, superClass) {
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      enumerable: false,
+      writable: true,
+      configurable: true
+    }
+  })
+  if (subClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass
 }
 
-function Dog() {}
-Dog.prototype = new Animal();
+var Parent = function Parent() {
+  _classCallCheck(this, Parent)
+}
 
-let dog1 = new Dog();
-dog1.colors.push("brown");
-let dog2 = new Dog();
-console.log(dog2.colors);
-
-// 借用构造函数实现继承
-function Animal(name) {
-  this.name = name
-  this.getName = function () {
-    return this.name
+var Child = (function (_Parent) {
+  _inherits(Child, _Parent)
+  function Child() {
+    _classCallCheck(this, Child)
+    return _possibleConstructorReturn(this, (Child.__proto__ || Object.getPrototypeOf(Child)).apply(this, arguments))
   }
-}
-
-function Dog(name) {
-  Animal.call(this, name)
-}
-
-Dog.prototype = new Animal();
+  return Child
+}(Parent))
